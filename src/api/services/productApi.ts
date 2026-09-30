@@ -37,8 +37,7 @@ function paginate(
     data: data.slice((page - 1) * limit, page * limit),
   };
 }
-// The documented endpoint accepts single brand IDs. Multi-selection is composed
-// from the same live catalog when the service cannot express the requested filter.
+
 async function filterCatalog(params: ProductParams): Promise<ProductsResponse> {
   const first = await requestProducts(
     new URLSearchParams({ limit: "40", page: "1" }),
